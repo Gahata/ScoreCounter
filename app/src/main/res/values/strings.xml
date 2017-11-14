@@ -6,10 +6,9 @@
 
     <string name="toolbar_title">Score Counter</string>
 
-
+    <string name="about_simple">Score Counter</string>
 
     <string name="accessibility_overflow">Overflow menu</string>
-
 
     <string name="add_counter">Add your first counter using Floating Action Button!</string>
 
