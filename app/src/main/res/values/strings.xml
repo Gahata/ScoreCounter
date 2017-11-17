@@ -12,4 +12,6 @@
 
     <string name="add_counter">Add your first counter using Floating Action Button!</string>
 
+    <string name="add_counter_title">Add counter</string>
+
 </resources>

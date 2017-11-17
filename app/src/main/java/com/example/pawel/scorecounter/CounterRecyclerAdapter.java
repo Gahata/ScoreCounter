@@ -22,19 +22,19 @@ public class CounterRecyclerAdapter extends RecyclerView.Adapter<CounterRecycler
 
     @Override
     public CounterRecyclerAdapter.RecentsRecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View listItem = LayoutInflater.from(parent.getContext()).inflate(R.layout.note_card, parent, false);
+        View listItem = LayoutInflater.from(parent.getContext()).inflate(R.layout.counter_cardview, parent, false);
         return new RecentsRecyclerViewHolder(listItem);
     }
 
     @Override
     public void onBindViewHolder(CounterRecyclerAdapter.RecentsRecyclerViewHolder holder, int position) {
-        holder.titleCardTextView.setText(noteList.get(position).getTitle());
-        holder.contentCardTextView.setText(noteList.get(position).getContent());
+        holder.nameTextView.setText("0");
+        holder.scoreTextView.setText("0");
     }
 
     @Override
     public int getItemCount() {
-        return noteList.size();
+        return 0;
     }
 
     public static class RecentsRecyclerViewHolder extends RecyclerView.ViewHolder {
@@ -50,10 +50,10 @@ public class CounterRecyclerAdapter extends RecyclerView.Adapter<CounterRecycler
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    Intent intent = new Intent(itemView.getContext(), NoteActivity.class);
-                    intent.putExtra("NOTE", noteList.get(position));
-                    intent.putExtra("ID", noteList.get(position).getId());
-                    itemView.getContext().startActivity(intent);
+                    //Intent intent = new Intent(itemView.getContext(), NoteActivity.class);
+                    //intent.putExtra("NOTE", noteList.get(position));
+                    //intent.putExtra("ID", noteList.get(position).getId());
+                    //itemView.getContext().startActivity(intent);
 
                 }
             });

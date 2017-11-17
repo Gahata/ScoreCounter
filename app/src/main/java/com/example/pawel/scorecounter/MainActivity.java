@@ -1,6 +1,7 @@
 package com.example.pawel.scorecounter;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
@@ -55,9 +56,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //TODO add inflate dialog fragment and move Snackbar to after user finished the dialog
+                Snackbar.make(view, "Added a counter", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
+
         });
     }
 
@@ -70,11 +73,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        //switch for overflow menu from toolbar
         switch (item.getItemId()) {
             case R.id.action_settings:
+                //TODO implement settings screen and delete this toast
                 Toast.makeText(this, "Settings menu clicked", Toast.LENGTH_LONG).show();
                 break;
             case R.id.action_about:
+                //starting AboutActivity class from toolbar menu
                 Intent intent = new Intent(this, AboutActivity.class);
                 this.startActivity(intent);
                 break;
@@ -85,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    //complicated method for colorizing toolbar and it's icons
     public static void colorizeToolbar(Toolbar toolbarView, int toolbarIconsColor, int toolbarBackgroundColor, Activity activity) {
         final PorterDuffColorFilter colorFilter
                 = new PorterDuffColorFilter(toolbarIconsColor, PorterDuff.Mode.MULTIPLY);
@@ -158,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    //method for removing the helpful listener called in setOverflowButtonColor method, called from it only
     private static void removeOnGlobalLayoutListener(View v, ViewTreeObserver.OnGlobalLayoutListener listener) {
             v.getViewTreeObserver().removeOnGlobalLayoutListener(listener);
     }
